@@ -55,3 +55,4 @@ wrapt
 yarl
 zipp
 retry
+langchain-neo4j
