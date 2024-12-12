@@ -44,10 +44,10 @@ def get_current_wait_times(hospital: str) -> str:
     else:
         return f"{minutes} minutes"
 
-from pydantic import BaseModel
-class NoInput(BaseModel):
-    pass
-def get_most_available_hospital(_: str = NoInput) -> dict[str, float]:
+# from pydantic import BaseModel
+# class NoInput(BaseModel):
+#     pass
+def get_most_available_hospital(_: str = Any) -> dict[str, float]:
     """Find the hospital with the shortest wait time."""
     current_hospitals = _get_current_hospitals()
 

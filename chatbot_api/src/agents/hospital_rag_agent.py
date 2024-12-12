@@ -1,11 +1,11 @@
 import os
 from langchain.tools import StructuredTool
-from chatbot_api.src.chains.hospital_cypher_chain import hospital_cypher_chain
-from chatbot_api.src.chains.hospital_review_chain import reviews_vector_chain
+from chains.hospital_cypher_chain import hospital_cypher_chain
+from chains.hospital_review_chain import reviews_vector_chain
 from langchain import hub
 from langchain.agents import AgentExecutor, Tool, create_openai_functions_agent
 from langchain_openai import AzureChatOpenAI
-from chatbot_api.src.tools.wait_times import (
+from tools.wait_times import (
     get_current_wait_times,
     get_most_available_hospital,
 )
@@ -51,7 +51,7 @@ tools = [
         input should be "Jordan Inc".
         """,
     ),
-    StructuredTool(
+    Tool(
         name="Availability",
         func=get_most_available_hospital,
         description="""

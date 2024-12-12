@@ -1,5 +1,5 @@
 import os
-from langchain.vectorstores.neo4j_vector import Neo4jVector
+from langchain_community.vectorstores import Neo4jVector
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_openai import AzureChatOpenAI
